@@ -22,6 +22,9 @@ public class CountingCharacters {
                 charactersCounted.put(s, 1);
             }
         }
-        System.out.println(charactersCounted);
+//        System.out.println(charactersCounted);
+        for (Map.Entry<String, Integer> letter : charactersCounted.entrySet()) {
+            System.out.println(letter.getKey() + ": " + letter.getValue());
+        }
     }
 }
