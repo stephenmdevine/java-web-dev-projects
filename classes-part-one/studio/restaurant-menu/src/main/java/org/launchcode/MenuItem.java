@@ -9,10 +9,11 @@ public class MenuItem {
     private Date addedToMenu;
     private Date today = new Date();
 
-    public MenuItem(Double price, String description, String category) {
+    public MenuItem(Double price, String description, String category, Date addedToMenu) {
         this.price = price;
         this.description = description;
         this.category = category;
+        this.addedToMenu = addedToMenu;
     }
 
     public Double getPrice() {
