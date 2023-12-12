@@ -54,6 +54,14 @@ public class MenuItem {
         return newMenuItem;
     }
 
+    public Date getAddedToMenu() {
+        return addedToMenu;
+    }
+
+    public void setAddedToMenu(Date addedToMenu) {
+        this.addedToMenu = addedToMenu;
+    }
+
     public void setNewMenuItem(Boolean newMenuItem) {
 //        this.newMenuItem = addedToMenu;
         // TODO: 12/7/2023 Compare the 'today' field to the 'addedToMenu' field
