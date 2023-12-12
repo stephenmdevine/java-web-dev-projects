@@ -2,6 +2,7 @@ package org.launchcode;
 import java.util.Date;
 
 public class MenuItem {
+    private String menuName;
     private Double price;
     private String description;
     private String category;
@@ -9,11 +10,20 @@ public class MenuItem {
     private Date addedToMenu;
     private Date today = new Date();
 
-    public MenuItem(Double price, String description, String category, Date addedToMenu) {
+    public MenuItem(String menuName, Double price, String description, String category, Date addedToMenu) {
+        this.menuName = menuName;
         this.price = price;
         this.description = description;
         this.category = category;
         this.addedToMenu = addedToMenu;
+    }
+
+    public String getMenuName() {
+        return menuName;
+    }
+
+    public void setMenuName(String menuName) {
+        this.menuName = menuName;
     }
 
     public Double getPrice() {
