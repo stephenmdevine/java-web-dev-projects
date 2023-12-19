@@ -83,4 +83,12 @@ class BalancedBracketsTest {
     public void openBracketAndTextReturnsFalse() {
         assertFalse(BalancedBrackets.hasBalancedBrackets("[LaunchCode"));
     }
+    @Test
+    public void openClosedClosedOpenReturnsFalse() {
+        assertFalse(BalancedBrackets.hasBalancedBrackets("[]]["));
+    }
+    @Test
+    public void openClosedClosedReturnsFalse() {
+        assertFalse(BalancedBrackets.hasBalancedBrackets("[]]"));
+    }
 }
