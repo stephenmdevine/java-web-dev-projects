@@ -16,7 +16,7 @@ public class Menu {
         return new Date();
     }
 
-    public void addMenuItem() {
+    public MenuItem addMenuItem() {
         Scanner input = new Scanner(System.in);
         System.out.println("What is the name of the new menu item? ");
         String menuName = input.next();
@@ -25,19 +25,20 @@ public class Menu {
         System.out.println("Please enter a description of " + menuName + ": ");
         String description = input.next();
         String s = input.nextLine();
-        System.out.println("Please enter " + menuName + "'s category: ");
+        System.out.println("Please enter " + menuName + "'s category (Appetizer, Entree, Dessert, or Drink): ");
         String category = input.next();
         System.out.println("Excellent!");
-        MenuItem tempMenuItem = new MenuItem(menuName, price, description, category, new Date());
         input.close();
-        fullMenu.add(tempMenuItem);
-        for (MenuItem item : fullMenu) {
-            System.out.println(item.getMenuName());
-            System.out.println(item.getPrice());
-            System.out.println(item.getDescription());
-            System.out.println(item.getCategory());
-            System.out.println(item.getAddedToMenu());
-        }
+//        MenuItem tempMenuItem = new MenuItem(menuName, price, description, category, new Date());
+        return new MenuItem(menuName, price, description, category, new Date());
+//        fullMenu.add(tempMenuItem);
+//        for (MenuItem item : fullMenu) {
+//            System.out.println(item.getMenuName());
+//            System.out.println(item.getPrice());
+//            System.out.println(item.getDescription());
+//            System.out.println(item.getCategory());
+//            System.out.println(item.getAddedToMenu());
+//        }
     }
 
     public String removeMenuItem(int item) {
@@ -75,4 +76,30 @@ public class Menu {
 
         return printedMenu;
     }
+
+    public int itemizedMenu() {
+        Scanner input = new Scanner(System.in);
+        StringBuilder lineByLineMenu = new StringBuilder();
+        for (int i = 0; i < fullMenu.size(); i++) {
+            lineByLineMenu.append(i + ". " + fullMenu.get(i).getMenuName());
+        }
+        System.out.println(lineByLineMenu);
+        System.out.println("Enter menu item number: ");
+        int item = input.nextInt();
+        input.close();
+
+        return item;
+    }
+
+    public StringBuilder individualItem(int item) {
+        MenuItem selection = fullMenu.get(item);
+        StringBuilder selectedItem = new StringBuilder();
+        selectedItem.append("*****\nMenu Item: " + selection.getMenuName());
+        selectedItem.append("Listed Price: $" + selection.getPrice());
+        selectedItem.append("Category: " + selection.getCategory());
+        selectedItem.append("Item Description: " + selection.getDescription());
+        selectedItem.append("Date added: " + selection.getAddedToMenu() + "\n*****");
+        return selectedItem;
+    }
+
 }
