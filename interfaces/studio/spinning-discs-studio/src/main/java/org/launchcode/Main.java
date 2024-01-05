@@ -7,6 +7,7 @@ public class Main {
         CD musicDisc = new CD("Fatty's Mix", "Mopey 2000's music");
         DVD legallyObtainedMovie = new DVD("Star Wars", "The original, unedited Star Wars movie");
         Vinyl classicTunes = new Vinyl("Johnny Cash at Folsom Prison", "A classic vinyl");
+        FloppyDisk wordDocs = new FloppyDisk(3, "Word Docs", "random word documents", 300);
 
         // TODO: Call each CD and DVD method to verify that they work as expected.
         musicDisc.spinDisc();
@@ -14,5 +15,6 @@ public class Main {
         musicDisc.readData();
         legallyObtainedMovie.writeData();
         classicTunes.spinDisc();
+        wordDocs.spinDisc();
     }
 }
