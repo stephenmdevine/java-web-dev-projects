@@ -2,70 +2,37 @@ package org.launchcode;
 import java.util.Date;
 
 public class MenuItem {
-    private String menuName;
-    private Double price;
-    private String description;
-    private String category;
-    private Boolean newMenuItem;
-    private Date addedToMenu;
-    private Date today = new Date();
+    private ItemName menuName;
+    private ItemPrice price;
+    private ItemDescription description;
+    private ItemCategory category;
+    private ItemIsNew newMenuItem;
 
-    public MenuItem(String menuName, Double price, String description, String category, Date addedToMenu) {
+    public MenuItem(ItemName menuName, ItemPrice price, ItemDescription description, ItemCategory category, ItemIsNew newMenuItem) {
         this.menuName = menuName;
         this.price = price;
         this.description = description;
         this.category = category;
-        this.addedToMenu = addedToMenu;
+        this.newMenuItem = newMenuItem;
     }
 
     public String getMenuName() {
-        return menuName;
-    }
-
-    public void setMenuName(String menuName) {
-        this.menuName = menuName;
+        return menuName.getName();
     }
 
     public Double getPrice() {
-        return price;
-    }
-
-    public void setPrice(Double price) {
-        this.price = price;
+        return price.getPrice();
     }
 
     public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
+        return description.getDescription();
     }
 
     public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
+        return category.getCategory();
     }
 
     public Boolean isNewMenuItem() {
-        return newMenuItem;
-    }
-
-    public Date getAddedToMenu() {
-        return addedToMenu;
-    }
-
-    public void setAddedToMenu(Date addedToMenu) {
-        this.addedToMenu = addedToMenu;
-    }
-
-    public void setNewMenuItem(Boolean newMenuItem) {
-//        this.newMenuItem = addedToMenu;
-        // TODO: 12/7/2023 Compare the 'today' field to the 'addedToMenu' field
-        //  to see if 'today' is more than 30 days past 'addedToMenu'
-
+        return newMenuItem.isNewItem();
     }
 }
